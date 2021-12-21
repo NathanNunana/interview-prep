@@ -65,20 +65,22 @@ class Solution {
     for (const key in this.zero) {
       num.push(this.zero[key]);
     }
+    console.log(num);
     if (this.binary[this.binary.length - 1] === 0) {
       num.pop();
     }
-    this.size = Math.max(...num);
+    console.log(num)
+    this.size = num.length == 0? 0:Math.max(...num);
   }
 
   toString() {
-    this.findLength();
+    this.findLength();   
     console.log(`Length of gap is ${this.size}`);
   }
 }
 
 // a new instance of Solution
-let solution = new Solution(20);
+let solution = new Solution(529);
 
 // results
 solution.toString();
