@@ -46,7 +46,6 @@ var Solution = /** @class */ (function () {
                 index = 0;
             }
         }
-        console.log(this.zero);
     };
     // finding the length of the largest binary gap
     Solution.prototype.findLength = function () {
@@ -55,20 +54,28 @@ var Solution = /** @class */ (function () {
         for (var key in this.zero) {
             num.push(this.zero[key]);
         }
-        console.log(num);
+        // console.log(num);
         if (this.binary[this.binary.length - 1] === 0) {
             num.pop();
         }
-        console.log(num);
+        // console.log(num);
         this.size = num.length == 0 ? 0 : Math.max.apply(Math, num);
     };
     Solution.prototype.toString = function () {
         this.findLength();
-        console.log("Length of gap is " + this.size);
+        var bin = this.binary.toString;
+        var rep = new RegExp(",", "g");
+        console.log("The number " + this.decimal.toString() + " has binary representation " + this.binary
+            .toString()
+            .replace(rep, " ") + " and contains " + this.size + " binary gap");
     };
     return Solution;
 }());
 // a new instance of Solution
-var solution = new Solution(529);
+var solution1 = new Solution(529);
+var solution2 = new Solution(32);
+var solution3 = new Solution(15);
 // results
-solution.toString();
+solution1.toString();
+solution2.toString();
+solution3.toString();
